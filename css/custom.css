@@ -1,3 +1,109 @@
 body{
     max-width: 1200px; 
+    margin: auto;
+    font-size: 16px;
+    padding: 40px;
+}
+H1{
+    margin-bottom: 60px;
+}
+.table{
+    padding: 0px;
+    margin-bottom: 0px;
+}
+tr{
+    vertical-align: middle;
+}
+td{
+    width: 22%;
+}
+td p{
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+}
+input{
+    padding: 8px;
+    width: 100%;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+}
+form{
+    display: flex;
+    justify-content: space-between;
+}
+#form-fields{
+    width: 66%;
+    display: flex;
+    justify-content: space-between;
+}
+#form-fields input,
+#form-fields div{
+    margin: 0 8px;
+}
+#form-buttom{
+    width: 12%;
+}
+#empty-state{
+    width: 100%;
+    margin: 40px auto;
+    text-align: center;
+}
+
+
+.summary h2{
+    display: inline-block;
+    padding: 10px 10px 10px 0px;
+    margin: 20px 10px;
+}
+
+
+
+button {
+    color: #0E3C44;
+    background-color:#679289;
+    border: 3px solid #679289;
+    border-radius:50px;
+    padding: 10px 20px;
+    float: right;
+}
+button:hover {
+    color: #0E3C44;
+    background-color:#679289;
+    border: 3px solid #0E3C44;
+}
+button:active {
+    color: #679289;
+    background-color:#0E3C44;
+    border: 3px solid #0E3C44;
+}
+button.button-remove{
+    color: #F15558;
+    background-color: #F7D3B5;
+    border: 3px solid #F7D3B5;
+    padding: 5px 20px;
+}
+button.button-remove:hover{
+    color: #F15558;
+    background-color: #F7D3B5;
+    border: 3px solid #F15558;
+    padding: 5px 20px;
+}
+button.button-remove:active{
+    color: #F7D3B5;
+    background-color: #F15558;
+    border: 3px solid #F15558;
+    padding: 5px 20px;
+}
+
+
+hr{
+    margin-top: 0px;
+    border: 1px solid lightgray;
+}
+
+#error{
+    padding: 10px;
+    color: red;
+    display: none;
 }

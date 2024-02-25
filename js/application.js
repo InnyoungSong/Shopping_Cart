@@ -1,5 +1,14 @@
 
 $(document).ready(function() {
+    //CHECK IF EMPTY
+    var checkIfEmnpty = function (){
+        if($("tbody").children().length !== 0 ){
+            $("#empty-state").css('display', 'none');
+        }else{
+            $("#empty-state").css('display', 'block');
+        }
+    }
+
     //UPDATING TABLE NUMBERS
     $("input").each(function(index, numberInput){
         $(this).change(function(){
@@ -16,11 +25,11 @@ $(document).ready(function() {
 
      //CREATING A TABLE ROW
      var createTableRow = function(name, price, quantity, total){
-        var itemName = $('<td class="name col-4">' + name + '</td>');
-        var itemPrice = $('<td class="price col-2"><input type="number" name="price" value="0"' + price +'"/></td>');
-        var itemQuantity = $('<td class="quantity col-2"><input type="number" name="quantity" value="1"' + quantity + '"/></td>');
-        var itemTotal = $('<td class="item-total col-2">$ ' + total + '</td>')
-        var removeButton = $('<td class="button-cancle col-2"><button class="button-remove">Remove</button></td>');
+        var itemName = $('<td class="name"><p>' + name + '</p></td>');
+        var itemPrice = $('<td class="price"><input type="number" name="price" value="' + price +'"/></td>');
+        var itemQuantity = $('<td class="quantity"><input type="number" name="quantity" value="' + quantity + '"/></td>');
+        var itemTotal = $('<td class="item-total"><p>$ ' + total + '</p></td>')
+        var removeButton = $('<td class="button-cancle"><button class="button-remove">Remove</button></td>');
 
 
         var newTableRow = $("<tr class='item col-12'></tr>").append(itemName, itemPrice, itemQuantity, itemTotal, removeButton);
@@ -34,6 +43,7 @@ $(document).ready(function() {
     $("tbody").on('click', ".button-remove", function(){
         $(this).closest("tr").remove();
         updateTotalPrice();
+        checkIfEmnpty();
     })
 
     //ADDING TABLE ROW
@@ -45,10 +55,14 @@ $(document).ready(function() {
         var newItemTotal = newItemPrice * newItemQuantity;
 
         if (newItemName !== ''){
+            $("#error").css('display', 'none');
+            $("#form-fields").find('input[name="item"]').css('border', '1px solid lightgrey');
             createTableRow(newItemName, newItemPrice, newItemQuantity, newItemTotal);
         }else{
-            console.log("name not avaiable")
+            $("#error").css('display', 'block');
+            $("#form-fields").find('input[name="item"]').css('border', '2px solid red');
         }
+        checkIfEmnpty();
     })
     
     //UPDATE TOTAL PRICE

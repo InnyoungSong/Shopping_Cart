@@ -1,61 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="js/application.js"></script>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="js/application.js"></script>
 
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/custom.css" rel="stylesheet">
-  </head>
-  <body>
-    <H1>Shopping Cart</H1>
-    <table class="table table-responsive">
-      <thead>
-        <tr>
-          <th>Item</th>
-          <th>Price</th>
-          <th>Quantity</th>
-          <th>Final Price</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="item col-12">
-          <td class="name col-4">Salmon</td>
-          <td class="price col-2"><input type="number" name="price" value="0"/></td>
-          <td class="quantity col-2"><input type="number" name="quantity" value="1"/></td>
-          <td class="item-total col-2">$60.00</td>
-          <td class="button-cancle col-2"><button class="button-remove">Remove</button></td>
-        </tr>
-        <tr class="item col-12">
-          <td class="name col-4">Salmon2</td>
-          <td class="price col-2"><input type="number" name="price" value="0"/></td>
-          <td class="quantity col-2"><input type="number" name="quantity" value="1"/></td>
-          <td class="item-total col-2">$40.00</td>
-          <td class="button-cancle col-2"><button class="button-remove">Remove</button></td>
-        </tr>
-      </tbody>
-    </table>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/custom.css" rel="stylesheet">
+</head>
 
-    <form>
-      <input type="text" name="item" placeholder="Enter item" required/>
-      <input type="number" name="price" placeholder="0" required/>
-      <input type="number" name="quantity" placeholder="0" required/>
-      <button id="button-add">Add</button>
-    </form>
+<body>
+  <H1>Shopping Cart</H1>
+  <table class="table table-responsive">
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Final Price</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
 
-    <div class="summary">
-      <h2>Total Price:</h2>
-      <h2>0</h2>
+    </tbody>
+  </table>
+
+  <p id="empty-state">Seems like there isn't any items in your Shopping Cart </p>
+  
+  <hr>
+
+  <form>
+    <div id="form-fields">
+      <input type="text" name="item" placeholder="Enter item" required />
+      <input type="number" name="price" placeholder="enter price" required />
+      <input type="number" name="quantity" placeholder="entery quantity" required />
     </div>
-   
-  </body>
+    <div id="form-button">
+      <button id="button-add">Add</button>
+    </div>
+  </form>
+  <span id="error">Item name is required</span>
+
+
+  <div class="summary">
+    <h2>Total Price:</h2>
+    <h2>0</h2>
+  </div>
+
+</body>
+
 </html>
